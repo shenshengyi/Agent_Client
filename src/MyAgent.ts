@@ -20,7 +20,7 @@ export class MyAgent {
   }
   //test;version = IModelVersion.latest()
   public async run() {
-    const contextId = "9374a302-8743-403e-ad03-6c49ef13c15e";
+    const contextId = config.CONTEXT_ID!;
     this._requestContext.enter();
     const hg = await BriefcaseManager.imodelClient.iModels.get(
       this._requestContext,
