@@ -4,10 +4,11 @@ import {
   IModelHost,
   IModelHostConfiguration,
 } from "@bentley/imodeljs-backend";
+import { config } from "./AgentConfig";
 
 class APP {
   public static async startup() {
-    const url = "http://localhost:4000";
+    const url:string = config.URL!;
     let hubClient: IModelBankClient = new IModelBankClient(url, undefined);
     const hostConfig = new IModelHostConfiguration();
     hostConfig.applicationType = ApplicationType.WebAgent;
